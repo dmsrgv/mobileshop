@@ -94,7 +94,7 @@ class CartScreen extends StatelessWidget {
                 ),
                 Padding(
                   padding:
-                      const EdgeInsets.symmetric(vertical: 40, horizontal: 50),
+                      const EdgeInsets.symmetric(vertical: 20, horizontal: 50),
                   child: const Text(
                     'My Cart',
                     style: TextStyle(
@@ -110,7 +110,7 @@ class CartScreen extends StatelessWidget {
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsets.only(top: 50),
+                            padding: const EdgeInsets.only(top: 10),
                             child: Container(
                               child: ListView.builder(
                                   itemCount: listBasket.length,
