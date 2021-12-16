@@ -43,7 +43,7 @@ class ProductDetailsScreen extends StatelessWidget {
               children: [
                 Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -98,7 +98,7 @@ class ProductDetailsScreen extends StatelessWidget {
                     itemBuilder: (context, index, page) {
                       return ImageView(imagesList[index]);
                     },
-                    options: CarouselOptions(autoPlay: true, height: 240)),
+                    options: CarouselOptions(autoPlay: true, height: 150)),
                 SizedBox(
                   height: 20,
                 ),
@@ -169,7 +169,7 @@ class ProductDetailsScreen extends StatelessWidget {
                             },
                             child: Padding(
                               padding: const EdgeInsets.symmetric(
-                                  horizontal: 40, vertical: 10),
+                                  horizontal: 20, vertical: 10),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -301,7 +301,7 @@ class DetailsPhone extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         child: Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -309,14 +309,14 @@ class DetailsPhone extends StatelessWidget {
             children: [
               const Icon(
                 Icons.memory,
-                size: 40,
+                size: 20,
                 color: Color(0xFFB7B7B7),
               ),
               Text(
                 productDetailsList[0].cpu.toString(),
                 style: const TextStyle(
                     color: Color(0xFFB7B7B7),
-                    fontSize: 14,
+                    fontSize: 12,
                     fontWeight: FontWeight.w400),
               )
             ],
@@ -325,14 +325,14 @@ class DetailsPhone extends StatelessWidget {
             children: [
               const Icon(
                 Icons.camera_alt_outlined,
-                size: 40,
+                size: 20,
                 color: Color(0xFFB7B7B7),
               ),
               Text(
                 productDetailsList[0].camera.toString(),
                 style: const TextStyle(
                     color: Color(0xFFB7B7B7),
-                    fontSize: 14,
+                    fontSize: 12,
                     fontWeight: FontWeight.w400),
               )
             ],
@@ -341,14 +341,14 @@ class DetailsPhone extends StatelessWidget {
             children: [
               const Icon(
                 Icons.storage,
-                size: 40,
+                size: 20,
                 color: Color(0xFFB7B7B7),
               ),
               Text(
                 productDetailsList[0].ssd.toString(),
                 style: const TextStyle(
                     color: Color(0xFFB7B7B7),
-                    fontSize: 14,
+                    fontSize: 12,
                     fontWeight: FontWeight.w400),
               )
             ],
@@ -357,14 +357,14 @@ class DetailsPhone extends StatelessWidget {
             children: [
               const Icon(
                 Icons.sd_card,
-                size: 40,
+                size: 20,
                 color: Color(0xFFB7B7B7),
               ),
               Text(
                 productDetailsList[0].sd.toString(),
                 style: const TextStyle(
                     color: Color(0xFFB7B7B7),
-                    fontSize: 14,
+                    fontSize: 12,
                     fontWeight: FontWeight.w400),
               )
             ],
