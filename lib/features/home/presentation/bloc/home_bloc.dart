@@ -10,17 +10,13 @@ part 'home_state.dart';
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final GetAllItems getAllItems;
 
-  HomeBloc({required this.getAllItems}) : super(HomeInitialState());
-  @override
-  Stream<HomeState> mapEventToState(HomeEvent event) async* {
-    if (event is LoadHomeScreenEvent) {
-      yield HomeLoadingState();
+  HomeBloc({required this.getAllItems}) : super(HomeInitialState()) {
+    on<LoadHomeScreenEvent>((event, emit) async {
+      emit(HomeLoadingState());
       final _loadedHomeList =
           await getAllItems.call(PathHomeParams(path: 'main'));
-      yield _loadedHomeList.fold((failure) => HomeErrorState(),
-          (list) => HomeLoadedState(loadedData: list));
-    } else {
-      yield HomeInitialState();
-    }
+      emit(_loadedHomeList.fold((failure) => HomeErrorState(),
+          (list) => HomeLoadedState(loadedData: list)));
+    });
   }
 }

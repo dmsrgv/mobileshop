@@ -8,17 +8,13 @@ part 'cart_state.dart';
 class CartBloc extends Bloc<CartEvent, CartState> {
   final GetCartItems getCartItems;
 
-  CartBloc({required this.getCartItems}) : super(CartInitialState());
-  @override
-  Stream<CartState> mapEventToState(CartEvent event) async* {
-    if (event is LoadCartScreenEvent) {
-      yield CartLoadingState();
+  CartBloc({required this.getCartItems}) : super(CartInitialState()) {
+    on<LoadCartScreenEvent>((event, emit) async {
+      emit(CartLoadingState());
       final _loadedHomeList =
           await getCartItems.call(PathCartParams(path: 'mycart'));
-      yield _loadedHomeList.fold((failure) => CartErrorState(),
-          (list) => CartLoadedState(loadedData: list));
-    } else {
-      yield CartInitialState();
-    }
+      emit(_loadedHomeList.fold((failure) => CartErrorState(),
+          (list) => CartLoadedState(loadedData: list)));
+    });
   }
 }
