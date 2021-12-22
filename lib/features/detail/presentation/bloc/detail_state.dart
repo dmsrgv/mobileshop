@@ -12,11 +12,9 @@ class DetailInitialState extends DetailState {}
 class DetailLoadingState extends DetailState {}
 
 class DetailLoadedState extends DetailState {
-  final List<dynamic> loadedData;
+  final List<ProductDetailsEntity> loadedData;
 
   DetailLoadedState({required this.loadedData});
-
-  List<dynamic> get getDetails => loadedData;
 
   @override
   List<Object> get props => [loadedData];

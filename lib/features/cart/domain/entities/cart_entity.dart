@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 class CartEntity extends Equatable {
-  final String id;
+  late final id;
   final List<BasketEntity> basket;
   final int total;
   final String delivery;
@@ -24,4 +24,6 @@ class BasketEntity {
   BasketEntity({required this.title, required this.image, required this.price});
 
   toJson() {}
+
+  toMap() {}
 }

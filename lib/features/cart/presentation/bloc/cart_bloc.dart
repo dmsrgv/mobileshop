@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:mobileshop/features/cart/domain/entities/cart_entity.dart';
 import 'package:mobileshop/features/cart/domain/usecases/get_cart_items.dart';
 part 'cart_event.dart';
 part 'cart_state.dart';

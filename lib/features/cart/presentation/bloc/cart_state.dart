@@ -12,7 +12,7 @@ class CartInitialState extends CartState {}
 class CartLoadingState extends CartState {}
 
 class CartLoadedState extends CartState {
-  final List<dynamic> loadedData;
+  final List<CartEntity> loadedData;
 
   CartLoadedState({required this.loadedData});
 

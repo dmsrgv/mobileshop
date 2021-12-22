@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobileshop/components/cache_image.dart';
 import 'package:mobileshop/features/detail/presentation/pages/product_details_screen.dart';
 import 'package:mobileshop/features/home/domain/entities/bestseller_entity.dart';
 
@@ -67,10 +68,11 @@ class BestSellerWidget extends StatelessWidget {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Image.network(
-                                items[index].picture.toString(),
+                              CacheImage(
+                                cover: false,
                                 width: 150,
                                 height: 150,
+                                imageUrl: items[index].picture.toString(),
                               ),
                               const SizedBox(
                                 width: 20,

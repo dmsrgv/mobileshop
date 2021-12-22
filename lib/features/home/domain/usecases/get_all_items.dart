@@ -6,13 +6,13 @@ import 'package:mobileshop/core/usecases/usecase.dart';
 import 'package:mobileshop/features/home/domain/entities/home_entity.dart';
 import 'package:mobileshop/features/home/domain/repositories/home_repository.dart';
 
-class GetAllItems extends UseCase<List<dynamic>, PathHomeParams> {
+class GetAllItems extends UseCase<List<HomeEntity>, PathHomeParams> {
   final HomeRepository homeRepository;
 
   GetAllItems(this.homeRepository);
 
   @override
-  Future<Either<Failure, List<dynamic>>> call(PathHomeParams params) async {
+  Future<Either<Failure, List<HomeEntity>>> call(PathHomeParams params) async {
     return await homeRepository.getAllItems(params.path);
   }
 }

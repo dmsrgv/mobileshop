@@ -1,19 +1,19 @@
 import 'package:mobileshop/features/detail/domain/entities/product_details_entity.dart';
 
 class ProductDetailsModel extends ProductDetailsEntity {
-  ProductDetailsModel({
-    required String id,
-    required List<dynamic> images,
-    required bool is_favorites,
-    required String title,
+  const ProductDetailsModel({
+    required id,
+    required images,
+    required is_favorites,
+    required title,
     required double rating,
-    required String cpu,
-    required String camera,
-    required String ssd,
-    required String sd,
-    required List<dynamic> color,
-    required List<dynamic> capacity,
-    required int price,
+    required cpu,
+    required camera,
+    required ssd,
+    required sd,
+    required color,
+    required capacity,
+    required price,
   }) : super(
             id: id,
             images: images,
@@ -57,6 +57,20 @@ class ProductDetailsModel extends ProductDetailsEntity {
       'sd': sd,
       'color': color,
       'capacity': capacity,
+      'price': price
+    };
+  }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'id': 9345,
+      'is_favorites': is_favorites ? 1 : 0,
+      'title': title,
+      'rating': rating.toString(),
+      'cpu': cpu == null ? 'kek' : 'lol',
+      'camera': camera,
+      'ssd': ssd,
+      'sd': sd,
       'price': price
     };
   }

@@ -2,7 +2,7 @@ import 'package:mobileshop/features/home/domain/entities/homestore_entity.dart';
 
 class HomeStoreModel extends HomeStoreEntity {
   HomeStoreModel({
-    required int id,
+    required id,
     required is_new,
     required is_favorites,
     required title,
@@ -30,6 +30,7 @@ class HomeStoreModel extends HomeStoreEntity {
         is_buy: json['is_buy']);
   }
 
+  @override
   Map<String, dynamic> toJson() {
     return {
       'id': id,
@@ -39,6 +40,19 @@ class HomeStoreModel extends HomeStoreEntity {
       'subtitle': subtitle,
       'picture': picture,
       'is_buy': is_buy,
+    };
+  }
+
+  @override
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'is_new': is_new == null ? 0 : 1,
+      'is_favorites': is_favorites == null ? 0 : 1,
+      'title': title,
+      'subtitle': subtitle,
+      'picture': picture,
+      'is_buy': is_buy ? 1 : 0,
     };
   }
 }

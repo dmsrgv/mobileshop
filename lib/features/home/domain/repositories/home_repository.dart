@@ -3,5 +3,5 @@ import 'package:mobileshop/core/error/failure.dart';
 import 'package:mobileshop/features/home/domain/entities/home_entity.dart';
 
 abstract class HomeRepository {
-  Future<Either<Failure, List<dynamic>>> getAllItems(String path);
+  Future<Either<Failure, List<HomeEntity>>> getAllItems(String path);
 }

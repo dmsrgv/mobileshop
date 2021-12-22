@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 class ProductDetailsEntity extends Equatable {
-  final String id;
+  final id;
   final List<dynamic> images;
   final bool is_favorites;
   final String title;

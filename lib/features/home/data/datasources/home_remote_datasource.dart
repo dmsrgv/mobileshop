@@ -5,7 +5,7 @@ import 'package:mobileshop/core/error/exception.dart';
 import 'package:mobileshop/features/home/data/models/home_model.dart';
 
 abstract class HomeRemoteDataSource {
-  Future<List<dynamic>> getAllItems(String path);
+  Future<List<HomeModel>> getAllItems(String path);
 }
 
 class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
@@ -22,8 +22,8 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
         headers: {'x-apikey': '2aa8e910f6c4ade81a84c9333ffc7bf6a398e'});
 
     if (response.statusCode == 200) {
-      List<dynamic> items = json.decode(response.body);
-      return items.map((json) => HomeModel.fromJson(json)).toList();
+      final items = json.decode(response.body);
+      return (items as List).map((json) => HomeModel.fromJson(json)).toList();
     } else {
       throw ServerException();
     }

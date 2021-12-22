@@ -3,9 +3,10 @@ import 'dart:convert';
 import 'package:mobileshop/core/error/exception.dart';
 import 'package:mobileshop/features/cart/data/models/cart_model.dart';
 import 'package:http/http.dart' as http;
+import 'package:mobileshop/features/cart/domain/entities/cart_entity.dart';
 
 abstract class CartRemoteDataSource {
-  Future<List<dynamic>> getCartItems(String path);
+  Future<List<CartModel>> getCartItems(String path);
 }
 
 class CartRemoteDataSourceImpl implements CartRemoteDataSource {

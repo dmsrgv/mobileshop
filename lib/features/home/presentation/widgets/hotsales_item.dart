@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mobileshop/components/cache_image.dart';
+import 'package:mobileshop/components/size_config.dart';
 import 'package:mobileshop/features/home/domain/entities/homestore_entity.dart';
 
 class HotSalesItem extends StatelessWidget {
@@ -10,13 +12,13 @@ class HotSalesItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(
-            image: NetworkImage('${item.picture.toString()}'),
-            fit: BoxFit.cover),
-      ),
-      child: Column(
+    return Stack(children: [
+      CacheImage(
+          imageUrl: item.picture.toString(),
+          width: SizeConfig.screenHeight,
+          height: SizeConfig.screenWidth,
+          cover: true),
+      Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
@@ -82,6 +84,6 @@ class HotSalesItem extends StatelessWidget {
           )
         ],
       ),
-    );
+    ]);
   }
 }

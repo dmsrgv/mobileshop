@@ -12,11 +12,11 @@ class HomeInitialState extends HomeState {}
 class HomeLoadingState extends HomeState {}
 
 class HomeLoadedState extends HomeState {
-  final List<dynamic> loadedData;
+  final List<HomeEntity> loadedData;
 
-  HomeLoadedState({required this.loadedData});
+  const HomeLoadedState({required this.loadedData});
 
-  List<dynamic> get getDetails => loadedData;
+  //List<dynamic> get getDetails => loadedData;
 
   @override
   List<Object> get props => [loadedData];

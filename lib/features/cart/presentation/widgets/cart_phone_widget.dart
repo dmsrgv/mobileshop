@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobileshop/components/cache_image.dart';
 import 'package:mobileshop/features/cart/domain/entities/cart_entity.dart';
 
 class CartPhoneWidget extends StatelessWidget {
@@ -17,14 +18,15 @@ class CartPhoneWidget extends StatelessWidget {
       child: Row(
         children: [
           Container(
-            height: 100,
-            width: 90,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10), color: Colors.white),
-            child: Image.network(
-              listBasket[index].image,
-            ),
-          ),
+              height: 100,
+              width: 90,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10), color: Colors.white),
+              child: CacheImage(
+                  imageUrl: listBasket[index].image,
+                  width: 90,
+                  height: 100,
+                  cover: false)),
           SizedBox(
             width: 20,
           ),

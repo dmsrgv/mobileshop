@@ -3,8 +3,10 @@ import 'package:mobileshop/core/error/exception.dart';
 import 'package:mobileshop/features/detail/data/models/product_details_model.dart';
 import 'dart:convert';
 
+import 'package:mobileshop/features/detail/domain/entities/product_details_entity.dart';
+
 abstract class ProductDetailsRemoteDataSource {
-  Future<List<dynamic>> getProductDetails(String path);
+  Future<List<ProductDetailsModel>> getProductDetails(String path);
 }
 
 class ProductDetailsDataSourceImpl implements ProductDetailsRemoteDataSource {

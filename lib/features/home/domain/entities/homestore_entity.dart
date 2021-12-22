@@ -23,5 +23,7 @@ class HomeStoreEntity extends Equatable {
   List<Object?> get props =>
       [id, is_new, is_favorites, title, subtitle, picture, is_buy];
 
+  toMap() {}
+
   toJson() {}
 }
