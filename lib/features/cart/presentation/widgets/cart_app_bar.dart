@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobileshop/components/map_screen.dart';
 
 class CartAppBar extends StatelessWidget {
   const CartAppBar({
@@ -42,7 +43,10 @@ class CartAppBar extends StatelessWidget {
                 width: 10,
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => MapScreen()));
+                },
                 child: Container(
                   width: 40,
                   height: 40,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobileshop/components/size_config.dart';
 import 'package:mobileshop/features/cart/presentation/pages/cart_screen.dart';
 import 'package:mobileshop/features/home/presentation/pages/home_screen.dart';
 
@@ -39,13 +40,14 @@ class _NavBarState extends State<NavBar> {
       backgroundColor: Color(0xFFE5E5E5),
       bottomNavigationBar: Material(
         elevation: 10,
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(30), topRight: Radius.circular(30)),
-        color: Color(0xFF010035),
+        color: const Color(0xFF010035),
         child: Container(
           width: double.infinity,
           height: 80,
           child: ListView.builder(
+              shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               scrollDirection: Axis.horizontal,
               padding: EdgeInsets.symmetric(horizontal: 10),
@@ -58,40 +60,37 @@ class _NavBarState extends State<NavBar> {
                     });
                   },
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 30),
-                    child: Container(
-                      child: Row(
-                        children: [
-                          selectedIndex == index
-                              ? Row(
-                                  children: [
-                                    Container(
-                                      width: 10,
-                                      height: 10,
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(5),
-                                          color: Colors.white),
-                                    ),
-                                    SizedBox(
-                                      width: 5,
-                                    ),
-                                    Text(
-                                      titles[index],
-                                      style: const TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w700,
-                                          fontSize: 16),
-                                    )
-                                  ],
-                                )
-                              : Icon(
-                                  data[index],
-                                  color: Colors.white,
-                                  size: 30,
-                                )
-                        ],
-                      ),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Row(
+                      children: [
+                        selectedIndex == index
+                            ? Row(
+                                children: [
+                                  Container(
+                                    width: 10,
+                                    height: 10,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(5),
+                                        color: Colors.white),
+                                  ),
+                                  const SizedBox(
+                                    width: 5,
+                                  ),
+                                  Text(
+                                    titles[index],
+                                    style: const TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 16),
+                                  )
+                                ],
+                              )
+                            : Icon(
+                                data[index],
+                                color: Colors.white,
+                                size: 30,
+                              )
+                      ],
                     ),
                   ),
                 );
