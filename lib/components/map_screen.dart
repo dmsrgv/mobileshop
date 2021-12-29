@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:location/location.dart';
 
 class MapScreen extends StatefulWidget {
   const MapScreen({Key? key}) : super(key: key);
@@ -10,8 +11,8 @@ class MapScreen extends StatefulWidget {
 
 class _MapScreenState extends State<MapScreen> {
   late GoogleMapController mapController;
-
   final LatLng _center = const LatLng(55.75370964839238, 37.6314958939642);
+
   final _markers = {
     const Marker(
         markerId: MarkerId('1'),
@@ -41,14 +42,32 @@ class _MapScreenState extends State<MapScreen> {
       appBar: AppBar(
         title: const Text('Map Screen'),
       ),
-      body: GoogleMap(
-          markers: _markers,
-          onMapCreated: _onMapCreated,
-          initialCameraPosition: CameraPosition(target: _center, zoom: 10.0)),
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        child: Stack(children: [
+          GoogleMap(
+            initialCameraPosition: CameraPosition(target: _center, zoom: 10.0),
+            mapType: MapType.normal,
+            myLocationEnabled: true,
+            markers: _markers,
+            onMapCreated: _onMapCreated,
+            myLocationButtonEnabled: true,
+          ),
+        ]),
+      ),
     );
   }
 
-  void _onMapCreated(GoogleMapController controller) {
+  void _onMapCreated(GoogleMapController controller) async {
     mapController = controller;
+    Location _location = Location();
+    _location.onLocationChanged.listen((l) {
+      mapController.animateCamera(
+        CameraUpdate.newCameraPosition(
+          CameraPosition(target: LatLng(l.latitude!, l.longitude!), zoom: 15),
+        ),
+      );
+    });
   }
 }
