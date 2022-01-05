@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "86393713276",
+    "project_id": "gleaming-tube-336111",
+    "storage_bucket": "gleaming-tube-336111.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:86393713276:android:97c2954076ec23e57b4ff9",
+        "android_client_info": {
+          "package_name": "com.example.mobileshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "86393713276-gncea8rh3hir347khibapqt4lkm6srcs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsiHr4NzWM7L5iZ7m9N8b4TVBCKeg7PRY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "86393713276-gncea8rh3hir347khibapqt4lkm6srcs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
