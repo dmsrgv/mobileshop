@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobileshop/components/map_screen.dart';
 import 'package:mobileshop/components/nav_bar.dart';
-import 'package:mobileshop/components/navigator_helper.dart';
 import 'package:mobileshop/features/cart/presentation/pages/cart_screen.dart';
 import 'package:mobileshop/features/home/presentation/bloc/home_bloc.dart';
 import 'package:mobileshop/location_service.dart' as di;
