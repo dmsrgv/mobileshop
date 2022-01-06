@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mobileshop/common/app_colors.dart';
 import 'package:mobileshop/common/app_icons.dart';
 import 'package:mobileshop/features/detail/domain/entities/product_details_entity.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SelectDetails extends StatefulWidget {
   List<ProductDetailsEntity> items;
@@ -25,8 +26,8 @@ class _SelectDetailsState extends State<SelectDetails> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            'Select color and capacity',
+          Text(
+            AppLocalizations.of(context)!.selectColorAndCapacity,
             style: TextStyle(
                 color: AppColors.blue,
                 fontWeight: FontWeight.w500,

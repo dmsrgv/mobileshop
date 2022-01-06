@@ -20,7 +20,7 @@ class TitlePhone extends StatelessWidget {
         Text(
           productDetailsList[0].title,
           style: const TextStyle(
-              color: AppColors.blue, fontSize: 24, fontWeight: FontWeight.w500),
+              color: AppColors.blue, fontSize: 20, fontWeight: FontWeight.w500),
         ),
         Container(
           width: 35,

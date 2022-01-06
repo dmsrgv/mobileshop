@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobileshop/features/cart/domain/entities/cart_entity.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class DeliveryText extends StatelessWidget {
   const DeliveryText({
@@ -16,8 +17,8 @@ class DeliveryText extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Text(
-            'Delivery',
+          Text(
+            AppLocalizations.of(context)!.delivery,
             style: TextStyle(
                 color: Colors.white, fontWeight: FontWeight.w400, fontSize: 16),
           ),

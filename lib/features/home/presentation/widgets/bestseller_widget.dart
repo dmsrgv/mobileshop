@@ -6,6 +6,7 @@ import 'package:mobileshop/components/cache_image.dart';
 import 'package:mobileshop/components/size_config.dart';
 import 'package:mobileshop/features/detail/presentation/pages/product_details_screen.dart';
 import 'package:mobileshop/features/home/domain/entities/bestseller_entity.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class BestSellerWidget extends StatelessWidget {
   final List<BestSellerEntity> items;
@@ -22,18 +23,24 @@ class BestSellerWidget extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
+            children: [
               Text(
-                'Best Seller',
+                AppLocalizations.of(context)!.bestSeller,
                 style: TextStyle(
-                    fontSize: 25,
+                    fontSize:
+                        (AppLocalizations.of(context)!.language) == 'English'
+                            ? 25
+                            : 18,
                     fontWeight: FontWeight.bold,
                     color: AppColors.blue),
               ),
               Text(
-                'see more',
+                AppLocalizations.of(context)!.viewAll,
                 style: TextStyle(
-                    fontSize: 15,
+                    fontSize:
+                        (AppLocalizations.of(context)!.language) == 'English'
+                            ? 15
+                            : 12,
                     fontWeight: FontWeight.w400,
                     color: AppColors.orange),
               ),

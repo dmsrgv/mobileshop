@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mobileshop/common/app_colors.dart';
 import 'package:mobileshop/common/app_icons.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CategoryList extends StatefulWidget {
   CategoryList({
@@ -13,15 +14,6 @@ class CategoryList extends StatefulWidget {
 }
 
 class _CategoryListState extends State<CategoryList> {
-  final List<String> categories = [
-    "Phones",
-    "Computer",
-    "Health",
-    "Books",
-    "Watchs",
-    "Others"
-  ];
-
   final List<IconData> icons = [
     Icons.smartphone,
     Icons.computer,
@@ -44,6 +36,15 @@ class _CategoryListState extends State<CategoryList> {
 
   @override
   Widget build(BuildContext context) {
+    final List<String> categories = [
+      AppLocalizations.of(context)!.phones,
+      AppLocalizations.of(context)!.computer,
+      AppLocalizations.of(context)!.health,
+      AppLocalizations.of(context)!.books,
+      AppLocalizations.of(context)!.books,
+      AppLocalizations.of(context)!.books
+    ];
+
     return ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: categories.length,
@@ -83,7 +84,7 @@ class _CategoryListState extends State<CategoryList> {
                 ),
                 Text(categories[index],
                     style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 12,
                         fontWeight: FontWeight.w500,
                         color: selectedIndex == index
                             ? AppColors.orange

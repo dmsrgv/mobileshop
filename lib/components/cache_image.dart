@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:mobileshop/common/app_images.dart';
 
 class CacheImage extends StatelessWidget {
   final String imageUrl;
@@ -41,7 +42,7 @@ class CacheImage extends StatelessWidget {
         );
       },
       errorWidget: (context, url, error) {
-        return _imageWidget(const AssetImage('assets/images/noimage.jpg'));
+        return _imageWidget(AssetImage(AppImages.noimage));
       },
     );
   }

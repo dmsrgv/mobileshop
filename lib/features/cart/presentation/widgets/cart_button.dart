@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobileshop/common/app_colors.dart';
 import 'package:mobileshop/components/size_config.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CartButton extends StatelessWidget {
   const CartButton({
@@ -16,10 +17,10 @@ class CartButton extends StatelessWidget {
             fixedSize: Size(SizeConfig.screenWidth! * 0.8, 50),
             primary: AppColors.orange),
         onPressed: () {},
-        child: const Padding(
+        child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           child: Text(
-            'Checkout',
+            AppLocalizations.of(context)!.checkout,
             style: TextStyle(
                 color: Colors.white, fontWeight: FontWeight.w600, fontSize: 20),
           ),

@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mobileshop/common/app_colors.dart';
 import 'package:mobileshop/common/app_icons.dart';
+import 'package:mobileshop/common/constants.dart';
+import 'package:mobileshop/components/map_screen.dart';
 import 'package:mobileshop/features/home/presentation/widgets/drop_down_list.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LocationWidget extends StatelessWidget {
   const LocationWidget({
@@ -26,12 +29,18 @@ class LocationWidget extends StatelessWidget {
             const SizedBox(
               width: 11,
             ),
-            Text(
-              'Zihuatanejo, Gro',
-              style: TextStyle(
-                  color: AppColors.blue,
-                  fontSize: 15,
-                  fontWeight: FontWeight.w500),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => MapScreen()));
+              },
+              child: Text(
+                Constants.city,
+                style: TextStyle(
+                    color: AppColors.blue,
+                    fontSize: 15,
+                    fontWeight: FontWeight.w500),
+              ),
             ),
             SizedBox(
               width: 5,
@@ -80,11 +89,15 @@ class LocationWidget extends StatelessWidget {
                                           size: 15,
                                         )),
                                   ),
-                                  const Text(
-                                    'Filter options',
+                                  Text(
+                                    AppLocalizations.of(context)!.filterOptions,
                                     style: TextStyle(
                                       color: AppColors.blue,
-                                      fontSize: 16,
+                                      fontSize: (AppLocalizations.of(context)!
+                                                  .language) ==
+                                              'English'
+                                          ? 16
+                                          : 12,
                                       fontWeight: FontWeight.w500,
                                     ),
                                   ),
@@ -92,7 +105,8 @@ class LocationWidget extends StatelessWidget {
                                     onPressed: () {
                                       Navigator.pop(context);
                                     },
-                                    child: Text('Done'),
+                                    child: Text(
+                                        AppLocalizations.of(context)!.done),
                                     style: ButtonStyle(
                                         backgroundColor:
                                             MaterialStateProperty.all(
@@ -101,8 +115,8 @@ class LocationWidget extends StatelessWidget {
                                 ],
                               ),
                             ),
-                            const Text(
-                              'Brand',
+                            Text(
+                              AppLocalizations.of(context)!.brand,
                               style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.w500,
@@ -117,8 +131,8 @@ class LocationWidget extends StatelessWidget {
                               ],
                               selectedItem: 'Samsung',
                             ),
-                            const Text(
-                              'Price',
+                            Text(
+                              AppLocalizations.of(context)!.price,
                               style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.w500,
@@ -135,8 +149,8 @@ class LocationWidget extends StatelessWidget {
                               ],
                               selectedItem: '\$300 - \$500',
                             ),
-                            const Text(
-                              'Size',
+                            Text(
+                              AppLocalizations.of(context)!.size,
                               style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.w500,

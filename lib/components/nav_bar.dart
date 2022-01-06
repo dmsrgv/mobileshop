@@ -4,6 +4,7 @@ import 'package:mobileshop/common/app_icons.dart';
 import 'package:mobileshop/components/size_config.dart';
 import 'package:mobileshop/features/cart/presentation/pages/cart_screen.dart';
 import 'package:mobileshop/features/home/presentation/pages/home_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({Key? key}) : super(key: key);
@@ -31,7 +32,12 @@ class _NavBarState extends State<NavBar> {
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
-    List<String> titles = ['Explorer', 'Cart', 'Favorites', 'Profile'];
+    List<String> titles = [
+      AppLocalizations.of(context)!.explorer,
+      AppLocalizations.of(context)!.cart,
+      AppLocalizations.of(context)!.favorites,
+      AppLocalizations.of(context)!.profile
+    ];
     List<String> svgicons = [
       AppIcons.phone,
       AppIcons.cart,
@@ -47,7 +53,7 @@ class _NavBarState extends State<NavBar> {
         color: const Color(0xFF010035),
         child: Container(
           width: double.infinity,
-          height: 80,
+          height: 70,
           child: ListView.builder(
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
@@ -62,7 +68,8 @@ class _NavBarState extends State<NavBar> {
                     });
                   },
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: EdgeInsets.symmetric(
+                        horizontal: SizeConfig.screenWidth! / 15),
                     child: Row(
                       children: [
                         selectedIndex == index
@@ -80,10 +87,15 @@ class _NavBarState extends State<NavBar> {
                                   ),
                                   Text(
                                     titles[index],
-                                    style: const TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w700,
-                                        fontSize: 16),
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: (AppLocalizations.of(context)!
+                                                  .language) ==
+                                              'English'
+                                          ? 15
+                                          : 12,
+                                    ),
                                   )
                                 ],
                               )

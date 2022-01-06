@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobileshop/common/app_colors.dart';
 import 'package:mobileshop/features/cart/presentation/pages/cart_screen.dart';
 import 'package:mobileshop/features/detail/domain/entities/product_details_entity.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class DetailButton extends StatelessWidget {
   const DetailButton({
@@ -24,19 +25,25 @@ class DetailButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text(
-              'Add to Cart',
+            Text(
+              AppLocalizations.of(context)!.addToCart,
               style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w700,
-                  fontSize: 24),
+                  fontSize:
+                      (AppLocalizations.of(context)!.language) == 'English'
+                          ? 24
+                          : 16),
             ),
             Text(
               '\$' + productDetailsList[0].price.toString(),
-              style: const TextStyle(
+              style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w700,
-                  fontSize: 24),
+                  fontSize:
+                      (AppLocalizations.of(context)!.language) == 'English'
+                          ? 24
+                          : 16),
             )
           ],
         ),

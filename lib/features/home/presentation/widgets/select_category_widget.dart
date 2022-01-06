@@ -4,6 +4,7 @@ import 'package:mobileshop/common/app_colors.dart';
 import 'package:mobileshop/common/app_icons.dart';
 import 'package:mobileshop/components/size_config.dart';
 import 'package:mobileshop/features/home/presentation/widgets/category_list.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SelectCategoryWidget extends StatelessWidget {
   const SelectCategoryWidget({
@@ -18,18 +19,24 @@ class SelectCategoryWidget extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
+            children: [
               Text(
-                'Select Category',
+                AppLocalizations.of(context)!.selectCategory,
                 style: TextStyle(
-                    fontSize: 25,
+                    fontSize:
+                        (AppLocalizations.of(context)!.language) == 'English'
+                            ? 25
+                            : 18,
                     fontWeight: FontWeight.bold,
                     color: AppColors.blue),
               ),
               Text(
-                'view all',
+                AppLocalizations.of(context)!.viewAll,
                 style: TextStyle(
-                    fontSize: 15,
+                    fontSize:
+                        (AppLocalizations.of(context)!.language) == 'English'
+                            ? 15
+                            : 12,
                     fontWeight: FontWeight.w400,
                     color: AppColors.orange),
               ),
@@ -59,7 +66,7 @@ class SelectCategoryWidget extends StatelessWidget {
                         width: 10,
                       ),
                       Text(
-                        'Search',
+                        AppLocalizations.of(context)!.search,
                         style: TextStyle(color: Colors.black54),
                       )
                     ],

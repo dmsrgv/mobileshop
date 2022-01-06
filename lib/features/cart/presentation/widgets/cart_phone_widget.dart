@@ -69,21 +69,21 @@ class CartPhoneWidget extends StatelessWidget {
                   style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w500,
-                      fontSize: 22),
+                      fontSize: 20),
                 ),
                 Text(
                   '2',
                   style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w500,
-                      fontSize: 22),
+                      fontSize: 20),
                 ),
                 Text(
                   '+',
                   style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w500,
-                      fontSize: 22),
+                      fontSize: 20),
                 ),
               ],
             ),

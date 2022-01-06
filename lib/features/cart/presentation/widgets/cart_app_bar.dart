@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mobileshop/common/app_colors.dart';
 import 'package:mobileshop/common/app_icons.dart';
 import 'package:mobileshop/components/map_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CartAppBar extends StatelessWidget {
   const CartAppBar({
@@ -34,8 +35,8 @@ class CartAppBar extends StatelessWidget {
           ),
           Row(
             children: [
-              const Text(
-                'Add address',
+              Text(
+                AppLocalizations.of(context)!.addAddress,
                 style: TextStyle(
                     color: AppColors.blue,
                     fontWeight: FontWeight.w500,

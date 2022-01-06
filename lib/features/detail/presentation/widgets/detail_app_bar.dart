@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mobileshop/common/app_colors.dart';
 import 'package:mobileshop/common/app_icons.dart';
 import 'package:mobileshop/features/cart/presentation/pages/cart_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class DetailAppBar extends StatelessWidget {
   const DetailAppBar({
@@ -32,8 +33,8 @@ class DetailAppBar extends StatelessWidget {
               ),
             ),
           ),
-          const Text(
-            'Product Details',
+          Text(
+            AppLocalizations.of(context)!.productDetails,
             style: TextStyle(
                 color: AppColors.blue,
                 fontWeight: FontWeight.w500,
