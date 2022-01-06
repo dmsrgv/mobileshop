@@ -1,9 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:provider/provider.dart';
 
 import 'package:mobileshop/components/map_screen.dart';
 import 'package:mobileshop/components/nav_bar.dart';
@@ -14,27 +13,37 @@ import 'package:mobileshop/location_service.dart' as di;
 import 'features/cart/presentation/bloc/cart_bloc.dart';
 import 'features/detail/presentation/bloc/detail_bloc.dart';
 import 'features/detail/presentation/pages/product_details_screen.dart';
-import 'l10n/all.dart';
-import 'l10n/local_provider.dart';
 import 'location_service.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   await di.init();
-  runApp(const MyApp());
+  final PendingDynamicLinkData? initialLink =
+      await FirebaseDynamicLinks.instance.getInitialLink();
+
+  runApp(MyApp(initialLink));
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp(PendingDynamicLinkData? initialLink, {Key? key})
+      : super(key: key);
 
   @override
   State<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
+  PendingDynamicLinkData? get initialLink {
+    if (initialLink != null) {
+      final Uri deepLink = initialLink!.link;
+      navKey.currentState!.pushNamed(deepLink.path);
+    }
+  }
+
   static final GlobalKey<NavigatorState> navKey = GlobalKey<NavigatorState>();
+
   Future<void> setupInteractedMessage() async {
     RemoteMessage? initialMessage =
         await FirebaseMessaging.instance.getInitialMessage();
@@ -54,6 +63,12 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     setupInteractedMessage();
+
+    FirebaseDynamicLinks.instance.onLink.listen((dynamicLinkData) {
+      navKey.currentState!.pushNamed(dynamicLinkData.link.path);
+    }).onError((error) {
+      print('error links');
+    });
   }
 
   @override
@@ -75,6 +90,7 @@ class _MyAppState extends State<MyApp> {
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
           home: const NavBar(),
+          initialRoute: '/',
           routes: {
             '/mapscreen': (context) => const MapScreen(),
             '/cart': (context) => const CartScreen(),
