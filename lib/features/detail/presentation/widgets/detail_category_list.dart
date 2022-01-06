@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobileshop/common/app_colors.dart';
 
 class DetailCategoryList extends StatefulWidget {
   DetailCategoryList({
@@ -39,20 +40,19 @@ class _DetailCategoryListState extends State<DetailCategoryList> {
                     },
                     child: Text(categories[index],
                         style: TextStyle(
-                            fontFamily: 'Mark Pro',
                             fontSize: 18,
                             fontWeight: selectedIndex == index
                                 ? FontWeight.w700
                                 : FontWeight.w400,
                             color: selectedIndex == index
-                                ? Color(0xFF010035)
+                                ? AppColors.blue
                                 : Colors.black.withOpacity(0.5))),
                   ),
                   selectedIndex == index
                       ? Container(
                           width: 70,
                           height: 2,
-                          color: Color(0xFFFF6E4E),
+                          color: AppColors.orange,
                         )
                       : Container()
                 ],

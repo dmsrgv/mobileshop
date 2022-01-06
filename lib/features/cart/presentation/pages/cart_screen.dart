@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mobileshop/common/app_colors.dart';
 import 'package:mobileshop/components/size_config.dart';
 import 'package:mobileshop/features/cart/domain/entities/cart_entity.dart';
 import 'package:mobileshop/features/cart/presentation/bloc/cart_bloc.dart';
@@ -36,7 +37,7 @@ class CartScreen extends StatelessWidget {
         items = state.loadedData as List<CartEntity>;
         List<BasketEntity> listBasket = items[0].basket;
         return Scaffold(
-            backgroundColor: const Color(0xFFE5E5E5),
+            backgroundColor: AppColors.background,
             body: SafeArea(
                 child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,7 +66,7 @@ class CartScreen extends StatelessWidget {
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(25),
                             topRight: Radius.circular(25)),
-                        color: Color(0xFF010035)),
+                        color: AppColors.blue),
                   ),
                 )
               ],

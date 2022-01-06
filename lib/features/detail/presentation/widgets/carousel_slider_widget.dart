@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:mobileshop/components/size_config.dart';
 import 'package:mobileshop/features/detail/presentation/widgets/image_view.dart';
 
 class CarouselSliderWidget extends StatelessWidget {
@@ -17,6 +18,9 @@ class CarouselSliderWidget extends StatelessWidget {
         itemBuilder: (context, index, page) {
           return ImageView(imagesList[index]);
         },
-        options: CarouselOptions(autoPlay: true, height: 150));
+        options: CarouselOptions(
+          autoPlay: true,
+          height: SizeConfig.screenHeight! / 4,
+        ));
   }
 }

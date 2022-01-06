@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mobileshop/common/app_colors.dart';
+import 'package:mobileshop/common/app_icons.dart';
 import 'package:mobileshop/features/detail/domain/entities/product_details_entity.dart';
 
 class SelectDetails extends StatefulWidget {
@@ -22,10 +25,10 @@ class _SelectDetailsState extends State<SelectDetails> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          const Text(
             'Select color and capacity',
             style: TextStyle(
-                color: Color(0xFF010035),
+                color: AppColors.blue,
                 fontWeight: FontWeight.w500,
                 fontSize: 16),
           ),
@@ -52,9 +55,9 @@ class _SelectDetailsState extends State<SelectDetails> {
                             },
                             child: Container(
                               child: _selectedColorIndex == index
-                                  ? Icon(
-                                      Icons.done,
-                                      color: Colors.white,
+                                  ? SvgPicture.asset(
+                                      AppIcons.done,
+                                      fit: BoxFit.none,
                                     )
                                   : Container(),
                               width: 50,
@@ -100,7 +103,7 @@ class _SelectDetailsState extends State<SelectDetails> {
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
                                     color: _selectedCapacityIndex == index
-                                        ? Color(0xFFFF6E4E)
+                                        ? AppColors.orange
                                         : Colors.white),
                               ),
                             ),

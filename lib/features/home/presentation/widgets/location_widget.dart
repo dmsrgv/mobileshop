@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mobileshop/common/app_colors.dart';
+import 'package:mobileshop/common/app_icons.dart';
 import 'package:mobileshop/features/home/presentation/widgets/drop_down_list.dart';
 
 class LocationWidget extends StatelessWidget {
@@ -15,33 +18,32 @@ class LocationWidget extends StatelessWidget {
           width: 30,
         ),
         Row(
-          children: const [
-            Icon(
-              Icons.location_on_outlined,
-              color: Color(0xFFFF6E4E),
+          children: [
+            SvgPicture.asset(
+              AppIcons.geo,
+              color: AppColors.orange,
             ),
-            SizedBox(
+            const SizedBox(
               width: 11,
             ),
             Text(
               'Zihuatanejo, Gro',
               style: TextStyle(
-                  color: Color(0xFF010035),
+                  color: AppColors.blue,
                   fontSize: 15,
-                  fontFamily: 'Mark Pro',
                   fontWeight: FontWeight.w500),
             ),
-            Icon(
-              Icons.expand_more,
-              color: Color(0xFFB3B3B3),
+            SizedBox(
+              width: 5,
+            ),
+            SvgPicture.asset(
+              AppIcons.down_array,
+              color: AppColors.gray,
             ),
           ],
         ),
         IconButton(
-          icon: const Icon(
-            Icons.filter_list,
-            color: Color(0xFF010035),
-          ),
+          icon: SvgPicture.asset(AppIcons.filter),
           onPressed: () {
             showModalBottomSheet(
                 shape: const RoundedRectangleBorder(
@@ -65,7 +67,7 @@ class LocationWidget extends StatelessWidget {
                                     width: 40,
                                     height: 40,
                                     decoration: BoxDecoration(
-                                        color: Color(0xFF010035),
+                                        color: AppColors.blue,
                                         borderRadius:
                                             BorderRadius.circular(10)),
                                     child: IconButton(
@@ -81,10 +83,10 @@ class LocationWidget extends StatelessWidget {
                                   const Text(
                                     'Filter options',
                                     style: TextStyle(
-                                        color: Color(0xFF010035),
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w500,
-                                        fontFamily: 'Mark Pro'),
+                                      color: AppColors.blue,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
+                                    ),
                                   ),
                                   ElevatedButton(
                                     onPressed: () {
@@ -94,7 +96,7 @@ class LocationWidget extends StatelessWidget {
                                     style: ButtonStyle(
                                         backgroundColor:
                                             MaterialStateProperty.all(
-                                                Color(0xFFFF6E4E))),
+                                                AppColors.orange)),
                                   )
                                 ],
                               ),
@@ -102,9 +104,9 @@ class LocationWidget extends StatelessWidget {
                             const Text(
                               'Brand',
                               style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w500,
-                                  fontFamily: 'Mark Pro'),
+                                fontSize: 20,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                             DropDownList(
                               listItems: [
@@ -118,9 +120,9 @@ class LocationWidget extends StatelessWidget {
                             const Text(
                               'Price',
                               style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w500,
-                                  fontFamily: 'Mark Pro'),
+                                fontSize: 20,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                             DropDownList(
                               listItems: [
@@ -136,9 +138,9 @@ class LocationWidget extends StatelessWidget {
                             const Text(
                               'Size',
                               style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w500,
-                                  fontFamily: 'Mark Pro'),
+                                fontSize: 20,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                             DropDownList(
                               listItems: [

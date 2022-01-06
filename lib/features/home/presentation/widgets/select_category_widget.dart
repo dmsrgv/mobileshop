@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mobileshop/common/app_colors.dart';
+import 'package:mobileshop/common/app_icons.dart';
 import 'package:mobileshop/components/size_config.dart';
 import 'package:mobileshop/features/home/presentation/widgets/category_list.dart';
 
@@ -19,18 +22,16 @@ class SelectCategoryWidget extends StatelessWidget {
               Text(
                 'Select Category',
                 style: TextStyle(
-                    fontFamily: 'Mark Pro',
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xFF010035)),
+                    color: AppColors.blue),
               ),
               Text(
                 'view all',
                 style: TextStyle(
-                    fontFamily: 'Mark Pro',
                     fontSize: 15,
                     fontWeight: FontWeight.w400,
-                    color: Color(0xFFFF6E4E)),
+                    color: AppColors.orange),
               ),
             ],
           ),
@@ -52,8 +53,8 @@ class SelectCategoryWidget extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: Row(
-                    children: const [
-                      Icon(Icons.search),
+                    children: [
+                      SvgPicture.asset(AppIcons.search),
                       SizedBox(
                         width: 10,
                       ),
@@ -64,16 +65,26 @@ class SelectCategoryWidget extends StatelessWidget {
                     ],
                   ),
                 ),
-                width: SizeConfig.blockSizeHorizontal! * 70,
+                width: SizeConfig.blockSizeHorizontal! * 65,
                 height: 32,
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(15)),
               ),
-              const Icon(
-                Icons.qr_code_rounded,
-                size: 25,
-                color: Color(0xFFFF6E4E),
+              SizedBox(
+                width: 5,
+              ),
+              Container(
+                width: 36,
+                height: 36,
+                decoration: BoxDecoration(
+                    color: AppColors.orange,
+                    borderRadius: BorderRadius.circular(18)),
+                child: SvgPicture.asset(
+                  AppIcons.qrcode,
+                  color: Colors.white,
+                  fit: BoxFit.none,
+                ),
               )
             ],
           ),

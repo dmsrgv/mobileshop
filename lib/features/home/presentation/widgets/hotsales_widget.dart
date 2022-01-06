@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobileshop/common/app_colors.dart';
 import 'package:mobileshop/components/size_config.dart';
 import 'package:mobileshop/features/home/domain/entities/homestore_entity.dart';
 import 'package:mobileshop/features/home/presentation/widgets/hotsales_item.dart';
@@ -23,18 +24,16 @@ class HotSalesWidget extends StatelessWidget {
               Text(
                 'Hot Sales',
                 style: TextStyle(
-                    fontFamily: 'Mark Pro',
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xFF010035)),
+                    color: AppColors.blue),
               ),
               Text(
                 'see more',
                 style: TextStyle(
-                    fontFamily: 'Mark Pro',
                     fontSize: 15,
                     fontWeight: FontWeight.w400,
-                    color: Color(0xFFFF6E4E)),
+                    color: AppColors.orange),
               ),
             ],
           ),

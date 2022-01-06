@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mobileshop/common/app_colors.dart';
+import 'package:mobileshop/common/app_icons.dart';
 import 'package:mobileshop/features/detail/domain/entities/product_details_entity.dart';
 
 class TitlePhone extends StatelessWidget {
@@ -17,20 +20,18 @@ class TitlePhone extends StatelessWidget {
         Text(
           productDetailsList[0].title,
           style: const TextStyle(
-              color: Color(0xFF010035),
-              fontFamily: 'Mark Pro',
-              fontSize: 24,
-              fontWeight: FontWeight.w500),
+              color: AppColors.blue, fontSize: 24, fontWeight: FontWeight.w500),
         ),
         Container(
-          width: 30,
+          width: 35,
           height: 30,
           decoration: BoxDecoration(
-              color: Color(0xFF010035), borderRadius: BorderRadius.circular(5)),
-          child: const Icon(
-            Icons.favorite_outline,
-            size: 20,
-            color: Colors.white,
+              color: AppColors.blue, borderRadius: BorderRadius.circular(8)),
+          child: SvgPicture.asset(
+            AppIcons.like,
+            fit: BoxFit.none,
+            width: 8,
+            height: 8,
           ),
         ),
       ],

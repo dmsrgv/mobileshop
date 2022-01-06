@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mobileshop/common/app_colors.dart';
+import 'package:mobileshop/common/app_icons.dart';
 
 class CategoryList extends StatefulWidget {
   CategoryList({
@@ -28,6 +31,15 @@ class _CategoryListState extends State<CategoryList> {
     Icons.devices_other
   ];
 
+  final List<String> svgicons = [
+    AppIcons.phone,
+    AppIcons.computer,
+    AppIcons.health,
+    AppIcons.books,
+    AppIcons.books,
+    AppIcons.books
+  ];
+
   int selectedIndex = 0;
 
   @override
@@ -48,18 +60,20 @@ class _CategoryListState extends State<CategoryList> {
                     });
                   },
                   child: Container(
-                    child: Icon(
-                      icons[index],
-                      size: 30,
+                    child: SvgPicture.asset(
+                      svgicons[index],
+                      width: 18,
+                      height: 18,
+                      fit: BoxFit.none,
                       color: selectedIndex == index
                           ? Colors.white
-                          : Color(0xFFB3B3C3),
+                          : AppColors.gray,
                     ),
                     width: 70.0,
                     height: 70.0,
                     decoration: BoxDecoration(
                         color: selectedIndex == index
-                            ? Color(0xFFFF6E4E)
+                            ? AppColors.orange
                             : Colors.white,
                         borderRadius: BorderRadius.circular(35)),
                   ),
@@ -69,12 +83,11 @@ class _CategoryListState extends State<CategoryList> {
                 ),
                 Text(categories[index],
                     style: TextStyle(
-                        fontFamily: 'Mark Pro',
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
                         color: selectedIndex == index
-                            ? Color(0xFFFF6E4E)
-                            : Color(0xFF010035)))
+                            ? AppColors.orange
+                            : AppColors.blue))
               ],
             ),
           );

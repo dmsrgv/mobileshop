@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mobileshop/common/app_icons.dart';
 import 'package:mobileshop/features/detail/domain/entities/product_details_entity.dart';
 
 class DetailRating extends StatelessWidget {
@@ -17,12 +19,9 @@ class DetailRating extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemCount: productDetailsList[0].rating.toInt(),
           itemBuilder: (context, index) {
-            return const Padding(
+            return Padding(
               padding: EdgeInsets.symmetric(horizontal: 5),
-              child: Icon(
-                Icons.star,
-                color: Color(0xFFFFB800),
-              ),
+              child: SvgPicture.asset(AppIcons.star),
             );
           }),
     );

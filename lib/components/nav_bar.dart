@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mobileshop/common/app_icons.dart';
 import 'package:mobileshop/components/size_config.dart';
 import 'package:mobileshop/features/cart/presentation/pages/cart_screen.dart';
 import 'package:mobileshop/features/home/presentation/pages/home_screen.dart';
@@ -30,11 +32,11 @@ class _NavBarState extends State<NavBar> {
   @override
   Widget build(BuildContext context) {
     List<String> titles = ['Explorer', 'Cart', 'Favorites', 'Profile'];
-    List<IconData> data = [
-      Icons.home_outlined,
-      Icons.local_grocery_store_outlined,
-      Icons.favorite_outline,
-      Icons.person_outline,
+    List<String> svgicons = [
+      AppIcons.phone,
+      AppIcons.cart,
+      AppIcons.like,
+      AppIcons.profile
     ];
     return Scaffold(
       backgroundColor: Color(0xFFE5E5E5),
@@ -51,7 +53,7 @@ class _NavBarState extends State<NavBar> {
               physics: NeverScrollableScrollPhysics(),
               scrollDirection: Axis.horizontal,
               padding: EdgeInsets.symmetric(horizontal: 10),
-              itemCount: data.length,
+              itemCount: svgicons.length,
               itemBuilder: (context, index) {
                 return GestureDetector(
                   onTap: () {
@@ -85,10 +87,11 @@ class _NavBarState extends State<NavBar> {
                                   )
                                 ],
                               )
-                            : Icon(
-                                data[index],
+                            : SvgPicture.asset(
+                                svgicons[index],
+                                height: 18,
+                                width: 18,
                                 color: Colors.white,
-                                size: 30,
                               )
                       ],
                     ),

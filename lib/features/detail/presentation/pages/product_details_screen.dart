@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mobileshop/common/app_colors.dart';
 import 'package:mobileshop/components/size_config.dart';
 import 'package:mobileshop/features/detail/domain/entities/product_details_entity.dart';
 import 'package:mobileshop/features/detail/presentation/bloc/detail_bloc.dart';
@@ -40,7 +41,7 @@ class ProductDetailsScreen extends StatelessWidget {
         productDetailsList = state.loadedData as List<ProductDetailsEntity>;
         final List<dynamic> imagesList = productDetailsList[0].images;
         return Scaffold(
-          backgroundColor: const Color(0xFFE5E5E5),
+          backgroundColor: AppColors.background,
           body: SafeArea(
             child: Column(
               children: [

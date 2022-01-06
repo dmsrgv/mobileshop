@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobileshop/common/app_colors.dart';
 import 'package:mobileshop/components/size_config.dart';
 
 class CartButton extends StatelessWidget {
@@ -13,7 +14,7 @@ class CartButton extends StatelessWidget {
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
             fixedSize: Size(SizeConfig.screenWidth! * 0.8, 50),
-            primary: Color(0xFFFF6E4E)),
+            primary: AppColors.orange),
         onPressed: () {},
         child: const Padding(
           padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),

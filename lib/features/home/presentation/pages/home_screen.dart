@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mobileshop/common/app_colors.dart';
 
 import 'package:mobileshop/components/size_config.dart';
 import 'package:mobileshop/features/home/domain/entities/bestseller_entity.dart';
@@ -38,7 +39,7 @@ class HomeScreen extends StatelessWidget {
         List<HomeStoreEntity> listHomeStore = items[0].homeStore;
         List<BestSellerEntity> listBestSeller = items[0].bestSeller;
         return Scaffold(
-          backgroundColor: const Color(0xFFE5E5E5),
+          backgroundColor: AppColors.background,
           body: SafeArea(
               child: SingleChildScrollView(
             child: Padding(

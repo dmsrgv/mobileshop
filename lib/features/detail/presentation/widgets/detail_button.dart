@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobileshop/common/app_colors.dart';
 import 'package:mobileshop/features/cart/presentation/pages/cart_screen.dart';
 import 'package:mobileshop/features/detail/domain/entities/product_details_entity.dart';
 
@@ -13,7 +14,7 @@ class DetailButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      style: ElevatedButton.styleFrom(primary: Color(0xFFFF6E4E)),
+      style: ElevatedButton.styleFrom(primary: AppColors.orange),
       onPressed: () {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => CartScreen()));

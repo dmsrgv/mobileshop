@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobileshop/common/app_colors.dart';
 
 class TitleCart extends StatelessWidget {
   const TitleCart({
@@ -12,10 +13,7 @@ class TitleCart extends StatelessWidget {
       child: Text(
         'My Cart',
         style: TextStyle(
-            color: Color(0xFF010035),
-            fontFamily: 'Mark Pro',
-            fontWeight: FontWeight.w700,
-            fontSize: 32),
+            color: AppColors.blue, fontWeight: FontWeight.w700, fontSize: 32),
       ),
     );
   }

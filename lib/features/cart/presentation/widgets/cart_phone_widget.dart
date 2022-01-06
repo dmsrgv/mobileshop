@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mobileshop/common/app_colors.dart';
+import 'package:mobileshop/common/app_icons.dart';
 import 'package:mobileshop/components/cache_image.dart';
 import 'package:mobileshop/features/cart/domain/entities/cart_entity.dart';
 
@@ -39,15 +42,13 @@ class CartPhoneWidget extends StatelessWidget {
                     listBasket[index].title,
                     style: TextStyle(
                         color: Colors.white,
-                        fontFamily: 'Mark Pro',
                         fontWeight: FontWeight.w400,
                         fontSize: 22),
                   ),
                   Text(
                     '\$' + listBasket[index].price.toString(),
                     style: TextStyle(
-                        color: Color(0xFFFF6E4E),
-                        fontFamily: 'Mark Pro',
+                        color: AppColors.orange,
                         fontWeight: FontWeight.w400,
                         fontSize: 22),
                   ),
@@ -67,7 +68,6 @@ class CartPhoneWidget extends StatelessWidget {
                   '-',
                   style: TextStyle(
                       color: Colors.white,
-                      fontFamily: 'Mark Pro',
                       fontWeight: FontWeight.w500,
                       fontSize: 22),
                 ),
@@ -75,7 +75,6 @@ class CartPhoneWidget extends StatelessWidget {
                   '2',
                   style: TextStyle(
                       color: Colors.white,
-                      fontFamily: 'Mark Pro',
                       fontWeight: FontWeight.w500,
                       fontSize: 22),
                 ),
@@ -83,7 +82,6 @@ class CartPhoneWidget extends StatelessWidget {
                   '+',
                   style: TextStyle(
                       color: Colors.white,
-                      fontFamily: 'Mark Pro',
                       fontWeight: FontWeight.w500,
                       fontSize: 22),
                 ),
@@ -93,10 +91,7 @@ class CartPhoneWidget extends StatelessWidget {
           SizedBox(
             width: 10,
           ),
-          Icon(
-            Icons.delete,
-            color: Color(0xFF36364D),
-          )
+          SvgPicture.asset(AppIcons.clear)
         ],
       ),
     );

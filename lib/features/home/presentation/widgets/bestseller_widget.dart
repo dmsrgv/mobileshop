@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mobileshop/common/app_colors.dart';
+import 'package:mobileshop/common/app_icons.dart';
 import 'package:mobileshop/components/cache_image.dart';
+import 'package:mobileshop/components/size_config.dart';
 import 'package:mobileshop/features/detail/presentation/pages/product_details_screen.dart';
 import 'package:mobileshop/features/home/domain/entities/bestseller_entity.dart';
 
@@ -22,18 +26,16 @@ class BestSellerWidget extends StatelessWidget {
               Text(
                 'Best Seller',
                 style: TextStyle(
-                    fontFamily: 'Mark Pro',
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xFF010035)),
+                    color: AppColors.blue),
               ),
               Text(
                 'see more',
                 style: TextStyle(
-                    fontFamily: 'Mark Pro',
                     fontSize: 15,
                     fontWeight: FontWeight.w400,
-                    color: Color(0xFFFF6E4E)),
+                    color: AppColors.orange),
               ),
             ],
           ),
@@ -43,11 +45,11 @@ class BestSellerWidget extends StatelessWidget {
           child: GridView.builder(
               physics: NeverScrollableScrollPhysics(),
               shrinkWrap: true,
-              gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                  maxCrossAxisExtent: 300,
+              gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                  maxCrossAxisExtent: SizeConfig.screenWidth! / 2,
                   childAspectRatio: 2 / 3,
-                  crossAxisSpacing: 40,
-                  mainAxisSpacing: 40),
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10),
               itemCount: items.length,
               itemBuilder: (context, index) {
                 return Stack(alignment: Alignment.topRight, children: [
@@ -70,12 +72,9 @@ class BestSellerWidget extends StatelessWidget {
                             children: [
                               CacheImage(
                                 cover: false,
-                                width: 150,
-                                height: 150,
+                                width: SizeConfig.screenWidth! / 3,
+                                height: SizeConfig.screenHeight! / 5,
                                 imageUrl: items[index].picture.toString(),
-                              ),
-                              const SizedBox(
-                                width: 20,
                               ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -83,9 +82,9 @@ class BestSellerWidget extends StatelessWidget {
                                   Text(
                                     '\$' + '${items[index].discount_price}',
                                     style: const TextStyle(
-                                        fontSize: 25,
-                                        fontWeight: FontWeight.w700,
-                                        fontFamily: 'Mark Pro'),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w700,
+                                    ),
                                   ),
                                   const SizedBox(
                                     width: 5,
@@ -94,11 +93,11 @@ class BestSellerWidget extends StatelessWidget {
                                     '\$' +
                                         '${items[index].price_without_discount}',
                                     style: const TextStyle(
-                                        decoration: TextDecoration.lineThrough,
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w700,
-                                        color: Colors.black54,
-                                        fontFamily: 'Mark Pro'),
+                                      decoration: TextDecoration.lineThrough,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w700,
+                                      color: Colors.black54,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -115,17 +114,22 @@ class BestSellerWidget extends StatelessWidget {
                     padding: const EdgeInsets.all(15.0),
                     child: Container(
                       child: items[index].is_favorites == true
-                          ? const Icon(
-                              Icons.favorite,
-                              color: Color(0xFFFF6E4E),
+                          ? SvgPicture.asset(
+                              AppIcons.like_colored,
+                              color: AppColors.orange,
+                              fit: BoxFit.none,
                             )
-                          : const Icon(
-                              Icons.favorite_outline,
-                              color: Color(0xFFFF6E4E),
+                          : SvgPicture.asset(
+                              AppIcons.like,
+                              color: AppColors.orange,
+                              fit: BoxFit.none,
                             ),
-                      width: 40,
-                      height: 40,
+                      width: 30,
+                      height: 30,
                       decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(color: AppColors.bluegray, blurRadius: 15)
+                          ],
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(20)),
                     ),

@@ -19,18 +19,12 @@ class TotalText extends StatelessWidget {
           const Text(
             'Total',
             style: TextStyle(
-                color: Colors.white,
-                fontFamily: 'Mark Pro',
-                fontWeight: FontWeight.w400,
-                fontSize: 16),
+                color: Colors.white, fontWeight: FontWeight.w400, fontSize: 16),
           ),
           Text(
             '\$' + items[0].total.toString() + ' us',
             style: TextStyle(
-                color: Colors.white,
-                fontFamily: 'Mark Pro',
-                fontWeight: FontWeight.w700,
-                fontSize: 16),
+                color: Colors.white, fontWeight: FontWeight.w700, fontSize: 16),
           ),
         ],
       ),

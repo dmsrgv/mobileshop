@@ -64,6 +64,7 @@ class _MyAppState extends State<MyApp> {
         child: MaterialApp(
           navigatorKey: navKey,
           debugShowCheckedModeBanner: false,
+          theme: ThemeData(fontFamily: 'Mark Pro'),
           home: const NavBar(),
           routes: {
             '/mapscreen': (context) => const MapScreen(),

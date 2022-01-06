@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobileshop/common/app_colors.dart';
 import 'package:mobileshop/components/cache_image.dart';
 import 'package:mobileshop/components/size_config.dart';
 import 'package:mobileshop/features/home/domain/entities/homestore_entity.dart';
@@ -37,7 +38,7 @@ class HotSalesItem extends StatelessWidget {
                     height: 40,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: const Color(0xFFFF6E4E)),
+                        color: AppColors.orange),
                   )
                 : Container(),
           ),
@@ -74,7 +75,7 @@ class HotSalesItem extends StatelessWidget {
                   child: Text(
                 'Buy now!',
                 style: TextStyle(
-                    color: Color(0xFF010035),
+                    color: AppColors.blue,
                     fontWeight: FontWeight.w700,
                     fontSize: 14),
               )),

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mobileshop/common/app_colors.dart';
+import 'package:mobileshop/common/app_icons.dart';
 import 'package:mobileshop/components/map_screen.dart';
 
 class CartAppBar extends StatelessWidget {
@@ -21,11 +24,11 @@ class CartAppBar extends StatelessWidget {
               width: 40,
               height: 40,
               decoration: BoxDecoration(
-                  color: Color(0xFF010035),
+                  color: AppColors.blue,
                   borderRadius: BorderRadius.circular(10)),
-              child: const Icon(
-                Icons.chevron_left,
-                color: Colors.white,
+              child: SvgPicture.asset(
+                AppIcons.left_array,
+                fit: BoxFit.none,
               ),
             ),
           ),
@@ -34,8 +37,7 @@ class CartAppBar extends StatelessWidget {
               const Text(
                 'Add address',
                 style: TextStyle(
-                    color: Color(0xFF010035),
-                    fontFamily: 'Mark Pro',
+                    color: AppColors.blue,
                     fontWeight: FontWeight.w500,
                     fontSize: 16),
               ),
@@ -51,11 +53,12 @@ class CartAppBar extends StatelessWidget {
                   width: 40,
                   height: 40,
                   decoration: BoxDecoration(
-                      color: Color(0xFFFF6E4E),
+                      color: AppColors.orange,
                       borderRadius: BorderRadius.circular(10)),
-                  child: const Icon(
-                    Icons.add_location,
+                  child: SvgPicture.asset(
+                    AppIcons.geo,
                     color: Colors.white,
+                    fit: BoxFit.none,
                   ),
                 ),
               ),

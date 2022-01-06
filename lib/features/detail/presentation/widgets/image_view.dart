@@ -15,7 +15,7 @@ class ImageView extends StatelessWidget {
         margin: EdgeInsets.symmetric(horizontal: 5),
         child: CacheImage(
             imageUrl: imgUrl!,
-            width: SizeConfig.screenWidth! / 2.5,
+            width: SizeConfig.screenWidth! / 2,
             height: SizeConfig.screenHeight!,
             cover: true));
   }
