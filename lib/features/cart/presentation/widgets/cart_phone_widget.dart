@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mobileshop/common/app_colors.dart';
 import 'package:mobileshop/common/app_icons.dart';
+import 'package:mobileshop/common/constants.dart';
 import 'package:mobileshop/components/cache_image.dart';
 import 'package:mobileshop/features/cart/domain/entities/cart_entity.dart';
 
@@ -65,21 +66,21 @@ class CartPhoneWidget extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  '-',
+                  Constants.textRemoveItemCart,
                   style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w500,
                       fontSize: 20),
                 ),
                 Text(
-                  '2',
+                  Constants.textCountItemCart,
                   style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w500,
                       fontSize: 20),
                 ),
                 Text(
-                  '+',
+                  Constants.textAddItemCart,
                   style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w500,

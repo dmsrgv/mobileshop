@@ -5,7 +5,7 @@ class ProductDetailsEntity extends Equatable {
   final List<dynamic> images;
   final bool is_favorites;
   final String title;
-  final double rating;
+  final int rating;
   final String cpu;
   final String camera;
   final String ssd;

@@ -7,22 +7,19 @@ import 'package:mobileshop/features/home/data/models/home_model.dart';
 
 part 'rest_api.g.dart';
 
-@RestApi(baseUrl: "https://db2021ecom-edca.restdb.io/rest/")
+@RestApi(baseUrl: "https://shopapi-0575.restdb.io/rest/")
 abstract class RestClient {
   factory RestClient(Dio dio, {String baseUrl}) = _RestClient;
 
-  @GET("/main")
-  @Headers(
-      <String, dynamic>{'x-apikey': '2aa8e910f6c4ade81a84c9333ffc7bf6a398e'})
+  @GET("/home")
+  @Headers(<String, dynamic>{'x-apikey': '61ddae2e95cb716ea5ee48e4'})
   Future<List<HomeModel>> getAllItems();
 
-  @GET("/productdetails")
-  @Headers(
-      <String, dynamic>{'x-apikey': '2aa8e910f6c4ade81a84c9333ffc7bf6a398e'})
+  @GET("/detail")
+  @Headers(<String, dynamic>{'x-apikey': '61ddae2e95cb716ea5ee48e4'})
   Future<List<ProductDetailsModel>> getProductDetails();
 
-  @GET("/mycart")
-  @Headers(
-      <String, dynamic>{'x-apikey': '2aa8e910f6c4ade81a84c9333ffc7bf6a398e'})
+  @GET("/cart")
+  @Headers(<String, dynamic>{'x-apikey': '61ddae2e95cb716ea5ee48e4'})
   Future<List<CartModel>> getCartItems();
 }

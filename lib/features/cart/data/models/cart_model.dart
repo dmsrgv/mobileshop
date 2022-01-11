@@ -14,7 +14,7 @@ class CartModel extends CartEntity {
         basket: List<BasketModel>.from(
             json['basket'].map((x) => BasketModel.fromJson(x))).toList(),
         total: json['total'] as int,
-        delivery: json['Delivery'] as String);
+        delivery: json['delivery'] as String);
   }
 
   Map<String, dynamic> toJson() {
@@ -22,7 +22,7 @@ class CartModel extends CartEntity {
       '_id': id,
       'basket': basket.map((e) => e.toJson()),
       'total': total,
-      'Delivery': delivery
+      'delivery': delivery
     };
   }
 
@@ -31,7 +31,7 @@ class CartModel extends CartEntity {
       'id': id,
       'basket': basket.map((e) => e.toMap()),
       'total': total,
-      'Delivery': delivery
+      'delivery': delivery
     };
   }
 }
@@ -46,7 +46,7 @@ class BasketModel extends BasketEntity {
   factory BasketModel.fromJson(Map<String, dynamic> json) {
     return BasketModel(
         title: json['title'] as String,
-        image: json['image'] as String,
+        image: json['images'] as String,
         price: json['price'] as int);
   }
 
@@ -54,7 +54,7 @@ class BasketModel extends BasketEntity {
   Map<String, dynamic> toJson() {
     return {
       'title': title,
-      'image': image,
+      'images': image,
       'price': price,
     };
   }
@@ -63,7 +63,7 @@ class BasketModel extends BasketEntity {
   Map<String, dynamic> toMap() {
     return {
       'title': title,
-      'image': image,
+      'images': image,
       'price': price,
     };
   }

@@ -20,7 +20,7 @@ class CarouselSliderWidget extends StatelessWidget {
         },
         options: CarouselOptions(
           autoPlay: true,
-          height: SizeConfig.screenHeight! / 4,
+          height: SizeConfig.screenHeight! / 5,
         ));
   }
 }

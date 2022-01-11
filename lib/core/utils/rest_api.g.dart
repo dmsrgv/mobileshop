@@ -8,7 +8,7 @@ part of 'rest_api.dart';
 
 class _RestClient implements RestClient {
   _RestClient(this._dio, {this.baseUrl}) {
-    baseUrl ??= 'https://db2021ecom-edca.restdb.io/rest/';
+    baseUrl ??= 'https://shopapi-0575.restdb.io/rest/';
   }
 
   final Dio _dio;
@@ -19,15 +19,13 @@ class _RestClient implements RestClient {
   Future<List<HomeModel>> getAllItems() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{
-      r'x-apikey': '2aa8e910f6c4ade81a84c9333ffc7bf6a398e'
-    };
+    final _headers = <String, dynamic>{r'x-apikey': '61ddae2e95cb716ea5ee48e4'};
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<List<dynamic>>(
         _setStreamType<List<HomeModel>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/main',
+                .compose(_dio.options, '/home',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     var value = _result.data!
@@ -40,15 +38,13 @@ class _RestClient implements RestClient {
   Future<List<ProductDetailsModel>> getProductDetails() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{
-      r'x-apikey': '2aa8e910f6c4ade81a84c9333ffc7bf6a398e'
-    };
+    final _headers = <String, dynamic>{r'x-apikey': '61ddae2e95cb716ea5ee48e4'};
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<List<dynamic>>(
         _setStreamType<List<ProductDetailsModel>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/productdetails',
+                .compose(_dio.options, '/detail',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     var value = _result.data!
@@ -62,15 +58,13 @@ class _RestClient implements RestClient {
   Future<List<CartModel>> getCartItems() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{
-      r'x-apikey': '2aa8e910f6c4ade81a84c9333ffc7bf6a398e'
-    };
+    final _headers = <String, dynamic>{r'x-apikey': '61ddae2e95cb716ea5ee48e4'};
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<List<dynamic>>(
         _setStreamType<List<CartModel>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/mycart',
+                .compose(_dio.options, '/cart',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     var value = _result.data!

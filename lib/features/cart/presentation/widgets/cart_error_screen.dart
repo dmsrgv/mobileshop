@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobileshop/common/constants.dart';
 
 class CartErrorScreen extends StatelessWidget {
   const CartErrorScreen({
@@ -8,7 +9,7 @@ class CartErrorScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text('ERROR'),
+      child: Text(Constants.textError),
     );
   }
 }

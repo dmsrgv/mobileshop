@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobileshop/common/constants.dart';
 
 class DetailInititialScreen extends StatelessWidget {
   const DetailInititialScreen({
@@ -8,7 +9,7 @@ class DetailInititialScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text('INITIAL ERROR'),
+      child: Text(Constants.textInitialError),
     );
   }
 }
