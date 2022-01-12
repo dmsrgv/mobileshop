@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:mobileshop/core/error/exception.dart';
-import 'package:mobileshop/core/utils/rest_api.dart';
+import 'package:mobileshop/core/utils/api.dart';
 import 'package:mobileshop/features/home/data/models/home_model.dart';
 
 abstract class HomeRemoteDataSource {
@@ -10,12 +10,11 @@ abstract class HomeRemoteDataSource {
 }
 
 class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
-  final RestClient client;
-
+  Api client;
   HomeRemoteDataSourceImpl({required this.client});
   @override
   Future<List<HomeModel>> getAllItems(String path) async {
-    var items = await client.getAllItems();
+    var items = await client.home.getAllItems();
     return items;
   }
   // final http.Client client;

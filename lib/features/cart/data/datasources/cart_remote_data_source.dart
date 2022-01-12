@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:mobileshop/core/error/exception.dart';
-import 'package:mobileshop/core/utils/rest_api.dart';
+import 'package:mobileshop/core/utils/api.dart';
 import 'package:mobileshop/features/cart/data/models/cart_model.dart';
 import 'package:http/http.dart' as http;
 import 'package:mobileshop/features/cart/domain/entities/cart_entity.dart';
@@ -11,13 +11,13 @@ abstract class CartRemoteDataSource {
 }
 
 class CartRemoteDataSourceImpl implements CartRemoteDataSource {
-  final RestClient client;
+  Api client;
 
   CartRemoteDataSourceImpl({required this.client});
 
   @override
   Future<List<CartModel>> getCartItems(String path) async {
-    var items = await client.getCartItems();
+    var items = await client.cart.getCartItems();
     return items;
   }
   // final http.Client client;

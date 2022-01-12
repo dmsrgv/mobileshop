@@ -1,6 +1,7 @@
 import 'package:http/http.dart' as http;
 import 'package:mobileshop/core/error/exception.dart';
-import 'package:mobileshop/core/utils/rest_api.dart';
+import 'package:mobileshop/core/utils/api.dart';
+//import 'package:mobileshop/core/utils/rest_api.dart';
 import 'package:mobileshop/features/detail/data/models/product_details_model.dart';
 import 'dart:convert';
 
@@ -11,13 +12,12 @@ abstract class ProductDetailsRemoteDataSource {
 }
 
 class ProductDetailsDataSourceImpl implements ProductDetailsRemoteDataSource {
-  final RestClient client;
-
+  Api client;
   ProductDetailsDataSourceImpl({required this.client});
 
   @override
   Future<List<ProductDetailsModel>> getProductDetails(String path) async {
-    var items = await client.getProductDetails();
+    var items = client.detail.getProductDetails();
     return items;
   }
   // final http.Client client;
