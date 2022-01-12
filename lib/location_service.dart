@@ -3,7 +3,11 @@ import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:mobileshop/core/db/database.dart';
 import 'package:mobileshop/core/platform/network_info.dart';
-import 'package:mobileshop/core/utils/rest_api.dart';
+import 'package:mobileshop/core/utils/api.dart';
+import 'package:mobileshop/core/utils/cart_api.dart';
+import 'package:mobileshop/core/utils/detail_api.dart';
+import 'package:mobileshop/core/utils/home_api.dart';
+//import 'package:mobileshop/core/utils/rest_api.dart';
 import 'package:mobileshop/features/detail/domain/usecases/get_product_details.dart';
 import 'package:mobileshop/features/home/data/datasources/home_local_datasource.dart';
 import 'package:mobileshop/features/home/data/datasources/home_remote_datasource.dart';
@@ -77,8 +81,8 @@ init() async {
 
   Database database = await DatabaseHelper().database;
   sl.registerLazySingleton(() => database);
-  final dio = Dio();
-  final client = RestClient(dio);
+  final client = Api();
+
   sl.registerLazySingleton(() => client);
   //sl.registerLazySingleton(() => http.Client);
   sl.registerLazySingleton(() => InternetConnectionChecker());
