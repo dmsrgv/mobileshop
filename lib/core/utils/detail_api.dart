@@ -7,12 +7,8 @@ part 'detail_api.g.dart';
 
 @RestApi(baseUrl: "")
 abstract class DetailApi {
-factory DetailApi(Dio dio, {String baseUrl}) = _DetailApi;
+  factory DetailApi(Dio dio, {String baseUrl}) = _DetailApi;
 
   @GET("/detail")
-  @Headers(<String, dynamic>{'x-apikey': '61ddae2e95cb716ea5ee48e4'})
   Future<List<ProductDetailsModel>> getProductDetails();
-
-
-
 }

@@ -6,12 +6,8 @@ part 'home_api.g.dart';
 
 @RestApi(baseUrl: "")
 abstract class HomeApi {
-factory HomeApi(Dio dio, {String baseUrl}) = _HomeApi;
+  factory HomeApi(Dio dio, {String baseUrl}) = _HomeApi;
 
- @GET("/home")
-  @Headers(<String, dynamic>{'x-apikey': '61ddae2e95cb716ea5ee48e4'})
+  @GET("/home")
   Future<List<HomeModel>> getAllItems();
-
-
-
 }
