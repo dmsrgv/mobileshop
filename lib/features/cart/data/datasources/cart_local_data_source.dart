@@ -19,19 +19,6 @@ class CartLocalDataSourceImpl implements CartLocalDataSource {
     await db.insert(cartTable,
         {cartID: 1900, cartTotal: cart.total, cartDelivery: cart.delivery},
         conflictAlgorithm: ConflictAlgorithm.replace);
-
-    // for (var basketItem in cart.basket) {
-    //   await db.insert(
-    //       cartBasketTable,
-    //       {
-    //         cartBasketID: 7000 + cart.basket.indexOf(basketItem),
-    //         cartBasketTitle: basketItem.title,
-    //         cartBasketImage: basketItem.image,
-    //         cartBasketPrice: basketItem.price
-    //       },
-    //       conflictAlgorithm: ConflictAlgorithm.replace);
-    // }
-
     for (var basketItem in cart.basket) {
       await db.insert(cartBasketTable, basketItem.toMap(),
           conflictAlgorithm: ConflictAlgorithm.replace);

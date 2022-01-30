@@ -7,12 +7,8 @@ part 'cart_api.g.dart';
 
 @RestApi(baseUrl: "")
 abstract class CartApi {
-factory CartApi(Dio dio, {String baseUrl}) = _CartApi;
+  factory CartApi(Dio dio, {String baseUrl}) = _CartApi;
 
-   @GET("/cart")
-  @Headers(<String, dynamic>{'x-apikey': '61ddae2e95cb716ea5ee48e4'})
+  @GET("/cart")
   Future<List<CartModel>> getCartItems();
-
-
-
 }

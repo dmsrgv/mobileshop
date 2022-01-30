@@ -17,8 +17,7 @@ class _HomeApi implements HomeApi {
   Future<List<HomeModel>> getAllItems() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'x-apikey': '61ddae2e95cb716ea5ee48e4'};
-    _headers.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<List<dynamic>>(
         _setStreamType<List<HomeModel>>(

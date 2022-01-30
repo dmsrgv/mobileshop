@@ -18,8 +18,10 @@ class CartRemoteDataSourceImpl implements CartRemoteDataSource {
   @override
   Future<List<CartModel>> getCartItems(String path) async {
     var items = await client.cart.getCartItems();
+
     return items;
   }
+
   // final http.Client client;
 
   // CartRemoteDataSourceImpl({required this.client});

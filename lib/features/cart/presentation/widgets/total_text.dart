@@ -32,3 +32,5 @@ class TotalText extends StatelessWidget {
     );
   }
 }
+
+//Не изменяем, изучаем PULL REQUEST
