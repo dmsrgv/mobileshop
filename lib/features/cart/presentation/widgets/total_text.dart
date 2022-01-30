@@ -33,4 +33,4 @@ class TotalText extends StatelessWidget {
   }
 }
 
-//Не изменяем, изучаем PULL REQUEST
+//Не изменяем, второй PULL REQUEST
